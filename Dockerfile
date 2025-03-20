@@ -11,17 +11,10 @@ RUN curl -sSL https://install.python-poetry.org | python3 - && \
 # RUN pip install pipx
 # RUN pipx install poetry
 
-# Set working directory
 WORKDIR /app
-
-# Copy pyproject.toml and poetry.lock
-COPY pyproject.toml poetry.lock ./
-
-# Install dependencies
 COPY . /app
 RUN poetry install --no-root
 
-# Expose port
 EXPOSE 8080
 
 # Command to run the application
