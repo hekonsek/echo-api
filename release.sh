@@ -1,4 +1,8 @@
+set -e
+
+poetry version minor
 version=$(poetry version -s)
+
 image=hekonsek/echo-api
 versioned_image=$image:$version
 latest_image=$image:latest
